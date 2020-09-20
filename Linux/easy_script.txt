@@ -1,0 +1,21 @@
+#! /bin/bash
+
+if [ $UID -eq 0 ]
+then
+	echo "Please do not run this script as root."
+fi
+
+# output = $1
+output=$HOME/research/sys_info.txt
+ip=$(ip addr | grep inet | tail -2 | head -1)
+suids=$(sudo find / -type f -perm /4000 2> /dev/null)
+
+if [ -d $HOME/research ] 
+then
+ echo "Research already exists!"
+fi
+
+if [ -f $output ]
+then
+ > $output && echo "This file exists!"
+fi

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $UID -eq 0 ]
+then
+	echo "Please do not run this as root"
+fi
+
+
+suids=$(sudo find / -type f -perm /4000 2> /dev/null)
+
+
+echo -e "\nThe permissions for sensitive /etc files: \n" >> $output
+for file in ${files[@]};
+do
+ls -l $file >> $output
+done
