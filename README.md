@@ -49,10 +49,15 @@ Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because ansible makes it much easier for creating computer software and processes used day to day. Ansible helps a lot out with IAC because of overwatching and management of infrastructure.
 
 The playbook implements the following tasks:
+
 •	Installing python3
+
 •	Installing docker.io
+
 •	Installing docker
+
 •	Increasing virtual memory
+
 •	Enabling docker service
 
 The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
@@ -72,6 +77,9 @@ Using the Playbook
 
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 SSH into the control node and follow the steps below:
+
 •	Copy the install-elk.yml file to machines that will use ELK.
+
 •	Update the config file to include which machines will install either ELK or Filebeat
+
 •	Run the playbook, and navigate to http://[elkserverpublicip]:5601/app/kibana#/home to check 
